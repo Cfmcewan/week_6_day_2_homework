@@ -35,22 +35,37 @@ describe('Park', function() {
     assert.strictEqual(actual, 1);
   });
 
-  
+
+  it('should be able to remove a dinosaur from its collection', function(){
+    const actual = park.removeDinosaur();
+    assert.strictEqual(actual, 0);
+    });
+
+   xit('should be able to find the dinosaur that attracts the most visitors', function(){
+    park.addDinosaur([
+      {species:'t-rex',
+      diet: 'carnivore',
+      guestsAttractedPerDay: 50
+    }
+    ]);
+    const actual = park.attractsMostVisitors();
+    assert.strictEqual(actual, 't-rex');
+  });
+
+
   //
-  // xit('should be able to remove a dinosaur from its collection', function(){
-  //   const actual = park.removeDinosaur();
-  //   assert.strictEqual(actual, 0);
-  // });
-  //
-  // xit('should be able to find the dinosaur that attracts the most visitors');
-  //
-  //
-  //
-  // xit('should be able to find all dinosaurs of a particular species', function(){
-  //   const actual = park.findSpecies();
-  //   assert.strictEqual(actual, 2);
-  // });
-  //
-  // xit('should be able to remove all dinosaurs of a particular species');
+  xit('should be able to find all dinosaurs of a particular species', function(){
+    park.addDinosaur([
+      {
+      species:'t-rex',
+      diet: 'carnivore',
+      guestsAttractedPerDay: 50
+      }
+    ]);
+    const actual = park.findSpecies();
+    assert.strictEqual(actual, 't-rex');
+  });
+
+  xit('should be able to remove all dinosaurs of a particular species');
 
 });
